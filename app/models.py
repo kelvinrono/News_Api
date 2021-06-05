@@ -4,8 +4,8 @@ class Source:
         self.id = id
 
 class Articles:
-    def __init__(self,  description, publishedAt, title):
-       # self.urlToImage = urlToImage
+    def __init__(self, urlToImage, description, publishedAt, title):
+        self.urlToImage = urlToImage
         self.description = description
         self.publishedAt = publishedAt
         self.title = title
