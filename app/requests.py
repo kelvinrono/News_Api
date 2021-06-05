@@ -25,6 +25,14 @@ def get_news(category):
 
     return news_results
 
+def process_results(news_list):
+    news_results = []
+    for news_item in news_list:
+        title = news_item.get('title')
+        publishedAt = news_item.get('publishedAt')
+        description = news_item.get('description')
+        #urlToImage = news_item.get('urlToImage')
+        news_object = Articles(description, title, publishedAt)
+        news_results.append(news_object)
 
-
-
+    return news_results
