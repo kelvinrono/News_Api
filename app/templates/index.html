@@ -1,9 +1,9 @@
 <body>
-    <!-- Popular movie section  -->
+
     <h3> Popular Movies</h3>
      <ul>
-        {% for tesla_news in popular %}
-            <li>{{ tesla.title}}</li>
+        {% for tesla_news in tesla %}
+            <li>{{ tesla_news.description}}</li>
         {% endfor %}
     </ul>
 </body>

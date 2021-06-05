@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import Source, Articles
+from .models import Articles
 
 api_key = None
 base_url = None
@@ -24,6 +24,7 @@ def get_news(category):
             news_results = process_results(news_results_list)
 
     return news_results
+    
 
 def process_results(news_list):
     news_results = []
@@ -32,7 +33,10 @@ def process_results(news_list):
         publishedAt = news_item.get('publishedAt')
         description = news_item.get('description')
         #urlToImage = news_item.get('urlToImage')
-        news_object = Articles(description, title, publishedAt)
+
+        news_object = Articles(description,publishedAt, title)
         news_results.append(news_object)
 
     return news_results
+
+
