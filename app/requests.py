@@ -1,5 +1,5 @@
 import urllib.request, json
-from .models import Articles
+from .models import Articles, Source
 
 api_key = None
 base_url = None
@@ -22,6 +22,7 @@ def get_news(category):
         if get_news_response['articles']:
             news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
+           
 
     return news_results
     
@@ -41,4 +42,33 @@ def process_results(news_list):
 
     return news_results
 
+# def get_source(category):
+#     get_news_url = base_url.format(category, api_key)
+    
+#     with urllib.request.urlopen(get_news_url) as url:
+#         get_news_data = url.read()
+#         get_news_response = json.loads(get_news_data)
+        
+#         source_results = None
+
+#         if get_news_response['articles.source']:
+           
+#             news_source_list =  get_news_response['articles.source']
+#             source_results =process_source(news_source_list) 
+
+#     return source_results
+
+
+# def process_source(source_list):
+#     source_results = []
+#     for source in source_list:
+#         id = source.get('id')
+#         name= source.get('source')
+
+#         if id:
+
+#             news_sources = Source(id, name,)
+#             source_results.append(news_sources)
+
+#     return source_results
 
