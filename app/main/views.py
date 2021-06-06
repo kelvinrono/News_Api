@@ -9,4 +9,4 @@ def index():
     bitcoin_news=get_news('bitcoin')
     apple_news=get_news('apple')
     title = 'Welcome to the news platform'
-    return render_template('index.html', title = title, tesla= tesla_news)
+    return render_template('index.html', bitcoin=bitcoin_news, tesla=tesla_news, apple=apple_news, apple=apple_news)

@@ -1,11 +1,28 @@
 <body>
 
     <h3>Tesla News</h3>
-     <ul>
+    <ul>
         {% for tesla_news in tesla %}
             <li><img src="{{tesla_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
             <li>{{ tesla_news.description}}</li>
             <li>{{ tesla_news.publishedAt}}</li>
         {% endfor %}
     </ul>
+    <h3>Apple News</h3>
+     <ul>
+        {% for apple_news in apple %}
+            <li><img src="{{apple_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
+            <li>{{ apple_news.description}}</li>
+            <li>{{ apple_news.publishedAt}}</li>
+        {% endfor %}
+    </ul>
+    <h3>Bitcoin News</h3>
+    <ul>
+        {% for bitcoin_news in bitcoin %}
+            <li><img src="{{bitcoin_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
+            <li>{{ bitcoin_news.description}}</li>
+            <li>{{ bitcoin_news.publishedAt}}</li>
+        {% endfor %}
+    </ul>
+  
 </body>
