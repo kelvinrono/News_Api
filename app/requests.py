@@ -34,10 +34,10 @@ def process_results(news_list):
         publishedAt = news_item.get('publishedAt')
         description = news_item.get('description')
         urlToImage = news_item.get('urlToImage')
-        
+        url = news_item.get('url')
         if urlToImage:
 
-            news_object = Articles(urlToImage, description,publishedAt, title, )
+            news_object = Articles(urlToImage, description,publishedAt, title,url )
             news_results.append(news_object)
 
     return news_results

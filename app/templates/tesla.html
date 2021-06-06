@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
-{% content block %}
 
-<div class="col-md-4">
-    <h3>Tesla News</h3>
-    <ul>
-        {% for tesla_news in tesla %}
-            <li><img src="{{tesla_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
-            <li>{{ tesla_news.description}}</li>
-            <li>{{ tesla_news.publishedAt}}</li>
-        {% endfor %}
-    </ul>
-        </div>
 
+{% block content%}
+<h3>Tesla News</h3>
+<div class="container">
+
+<div class="card" style="width: 18rem;">
+    {% for tesla_news in tesla %}
+    <img src="{{tesla_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
+    <div class="card-body">
+      <h5 class="card-title">{{ tesla_news.publishedAt}}</h5>
+      <p class="card-text">{{ tesla_news.description}}<p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
 {% endblock %}
+

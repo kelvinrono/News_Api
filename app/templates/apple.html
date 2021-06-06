@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
-{% content block %}
+{% block content%}
 
 <div class="col-md-4">
     <h3>Apple News</h3>
-     <ul>
-         
+    <ul>
         {% for apple_news in apple %}
             <li><img src="{{apple_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
             <li>{{ apple_news.description}}</li>
             <li>{{ apple_news.publishedAt}}</li>
         {% endfor %}
     </ul>
-    </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
