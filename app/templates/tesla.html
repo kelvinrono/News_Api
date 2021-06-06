@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% content block %}
+
+<div class="col-md-4">
+    <h3>Tesla News</h3>
+    <ul>
+        {% for tesla_news in tesla %}
+            <li><img src="{{tesla_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
+            <li>{{ tesla_news.description}}</li>
+            <li>{{ tesla_news.publishedAt}}</li>
+        {% endfor %}
+    </ul>
+        </div>
+
+{% endblock %}

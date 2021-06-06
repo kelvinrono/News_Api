@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% content block %}
+
+<div class="col-md-4">
+    <h3>Bitcoin News</h3>
+    <ul>
+        {% for bitcoin_news in bitcoin %}
+            <li><img src="{{bitcoin_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
+            <li>{{ bitcoin_news.description}}</li>
+            <li>{{ bitcoin_news.publishedAt}}</li>
+        {% endfor %}
+    </ul>
+    </div>
+
+    {% endblock %}
