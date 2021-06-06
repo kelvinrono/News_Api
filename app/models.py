@@ -10,6 +10,7 @@ class Articles:
         self.publishedAt = publishedAt
         self.title = title
         self.url = url
+        
 
 
     

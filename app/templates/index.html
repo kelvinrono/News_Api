@@ -1,42 +1,54 @@
 {% extends 'base.html'%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+{% endblock %}
 {% block content %}
 <div class="container">
 <div class="row">
   <div class="col-md-4">
     <h2>Bitcoin news</h2>
-  <div class="card" style="width: 18rem;">
     {% for bitcoin_news in bitcoin %}
+  <div class="card border-primary bitcoin" style="width: 18rem;">
+    
+    <div class="card-title"> <b>Title:</b><i>{{bitcoin_news.title}}</i></div>
     <img src="{{bitcoin_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
     <div class="card-body">
-      <h5 class="card-title">{{ bitcoin_news.publishedAt}}</h5>
-      <p class="card-text">{{ bitcoin_news.description}}<p>
+    <p class="card-text">{{ bitcoin_news.description}}<p>
       <a href="{{bitcoin_news.url}}" class="btn btn-primary">Read full article</a>
     </div>
-    {% endfor %}
+    <h5 class="card-footer"><b>created at:</b>{{ bitcoin_news.publishedAt}}</h5>
+   
   </div>
+  {% endfor %}
   </div>
   <div class="col-md-4">
-  <div class="card" style="width: 18rem;">
+    <h2>Apple news</h2>
+  <div class="card apple" style="width: 18rem;">
     {% for apple_news in apple %}
+    <div class="card-title"><b>Title</b><i>{{apple_news.title}}</i></div>
     <img src="{{apple_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
     <div class="card-body">
-      <h5 class="card-title">{{ apple_news.publishedAt}}</h5>
+      
       <p class="card-text">{{ apple_news.description}}<p>
       <a href="{{apple_news.url}}" class="btn btn-primary">Read full article</a>
+     
     </div>
+    <h5 class="card-footer"><b>created at:</b>{{ apple_news.publishedAt}}</h5>
     {% endfor %}
   </div>
   </div>
 
   <div class="col-md-4">
-    <div class="card" style="width: 18rem;">
+    <h2>Tesla news</h2>
+    <div class="card tesla" style="width: 18rem;">
       {% for tesla_news in tesla %}
+      <div class="card-title"><b>Title:</b><i>{{tesla_news.title}}</i></div>
       <img src="{{tesla_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
-      <div class="card-body">
-        <h5 class="card-title">{{ tesla_news.publishedAt}}</h5>
-        <p class="card-text">{{ tesla_news.description}}<p>
-        <a href="{{tesla_news.url}}" class="btn btn-primary">Read full article</a>
+      <div class="card-body">        <p class="card-text">{{ tesla_news.description}}<p>
+      <a href="{{tesla_news.url}}" class="btn btn-primary">Read full article</a>
       </div>
+      <h5 class="card-footer"><b>created at:</b>{{ tesla_news.publishedAt}}</h5>
       {% endfor %}
     </div>
   </div>
