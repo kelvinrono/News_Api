@@ -3,7 +3,7 @@
 
 {% block content%}
 <h3>Tesla News</h3>
-<div class="container">
+<div class="container tesla">
 
 <div class="card" style="width: 18rem;">
     {% for tesla_news in tesla %}
@@ -11,7 +11,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ tesla_news.publishedAt}}</h5>
       <p class="card-text">{{ tesla_news.description}}<p>
-      <a href="tesla_news.url" class="btn btn-primary">Read full article</a>
+      <a href="{{tesla_news.url}}" class="btn btn-primary">Read full article</a>
     </div>
     {% endfor %}
   </div>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content%}
 <h3>Bitcoin News</h3>
-<div class="container">
+<div class="containe bitcoin">
 
 <div class="card" style="width: 18rem;">
     {% for bitcoin_news in bitcoin %}
@@ -9,7 +9,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ bitcoin_news.publishedAt}}</h5>
       <p class="card-text">{{ bitcoin_news.description}}<p>
-      <a href="bitcoin_news.url" class="btn btn-primary">Read full article</a>
+      <a href="{{bitcoin_news.url}}" class="btn btn-primary">Read full article</a>
     </div>
     {% endfor %}
   </div>

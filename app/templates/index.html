@@ -1,9 +1,48 @@
 {% extends 'base.html'%}
 {% block content %}
 <div class="container">
-    <div class="row">
-      
-      <a class="navbar-brand" href="/tesla"> Tesla News </a>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Bitcoin news</h2>
+  <div class="card" style="width: 18rem;">
+    {% for bitcoin_news in bitcoin %}
+    <img src="{{bitcoin_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
+    <div class="card-body">
+      <h5 class="card-title">{{ bitcoin_news.publishedAt}}</h5>
+      <p class="card-text">{{ bitcoin_news.description}}<p>
+      <a href="{{bitcoin_news.url}}" class="btn btn-primary">Read full article</a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  <div class="col-md-4">
+  <div class="card" style="width: 18rem;">
+    {% for apple_news in apple %}
+    <img src="{{apple_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
+    <div class="card-body">
+      <h5 class="card-title">{{ apple_news.publishedAt}}</h5>
+      <p class="card-text">{{ apple_news.description}}<p>
+      <a href="{{apple_news.url}}" class="btn btn-primary">Read full article</a>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card" style="width: 18rem;">
+      {% for tesla_news in tesla %}
+      <img src="{{tesla_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
+      <div class="card-body">
+        <h5 class="card-title">{{ tesla_news.publishedAt}}</h5>
+        <p class="card-text">{{ tesla_news.description}}<p>
+        <a href="{{tesla_news.url}}" class="btn btn-primary">Read full article</a>
+      </div>
+      {% endfor %}
     </div>
   </div>
+
+
+</div>
+</div>
+
 {% endblock %} 
