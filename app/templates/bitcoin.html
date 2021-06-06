@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content%}
+<h3>Bitcoin News</h3>
+<div class="container">
 
-<div class="col-md-4">
-    <h3>Bitcoin News</h3>
-    <ul>
-        {% for bitcoin_news in bitcoin %}
-            <li><img src="{{bitcoin_news.urlToImage}}" height="200" width="200" alt="Image"> </li>
-            <li>{{ bitcoin_news.description}}</li>
-            <li>{{ bitcoin_news.publishedAt}}</li>
-        {% endfor %}
-    </ul>
+<div class="card" style="width: 18rem;">
+    {% for bitcoin_news in bitcoin %}
+    <img src="{{bitcoin_news.urlToImage}}" class="card-img-top img-fluid" alt="Tesla" height="200" width="200">
+    <div class="card-body">
+      <h5 class="card-title">{{ bitcoin_news.publishedAt}}</h5>
+      <p class="card-text">{{ bitcoin_news.description}}<p>
+      <a href="bitcoin_news.url" class="btn btn-primary">Read full article</a>
+    </div>
+    {% endfor %}
+  </div>
+
 </div>
-
 {% endblock %}
